@@ -18,6 +18,6 @@ const counterSlice = createSlice({
   },
 })
 
-export const {inc, dec, res } = counterSlice.actions
+export const {inc, dec, res } = counterSlice.actions 
 
 export default counterSlice.reducer
