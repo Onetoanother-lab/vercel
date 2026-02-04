@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { inc, dec, res } from './Redux/counterSlice'
 import { ToastContainer, toast } from 'react-toastify';
+import Navbar from './components/Navbar';
+import Card from './components/Card';
 
 
 export default function App() {
@@ -17,11 +19,13 @@ export default function App() {
 
   return (
     <div>
+      <Navbar/>
       <h1>{count}</h1>
       <button disabled={count >= max} onClick={() => dispatch(inc())}>+</button> 
       <button disabled={count <= min} onClick={() => dispatch(dec())}>-</button>
       <button disabled={count <= min} onClick={() => dispatch(res())}>res</button>
       <ToastContainer />
+      <Card/>
     </div>
   )
 }
