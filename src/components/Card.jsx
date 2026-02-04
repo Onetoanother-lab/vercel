@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ElectricBorder from './ElectricBorder'
 
 const Card = () => {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,14 @@ const Card = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
       {products.map((product) => (
+        
         <div key={product.id} className="card bg-base-100 w-96 shadow-sm">
+          <ElectricBorder
+          color="#7df9ff"
+          speed={1}
+          chaos={0.24}
+          thickness={4}
+          style={{ borderRadius: 16 }}>
           <figure>
             <img
               src={product.thumbnail}
@@ -34,6 +42,7 @@ const Card = () => {
               <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
+          </ElectricBorder>
         </div>
       ))}
     </div>
